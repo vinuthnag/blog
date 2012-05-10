@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    "application", :media=> "all" %>
+  <%= javascript_include_tag "application","bootstrap-modal" %>
+  <%= csrf_meta_tags %>
+  <body style="background: #EEEEEE;">
+   
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">
+  
+</script>
+
+</head>
+<body>
+  <div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Blog Contents</a>
+ 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse">
+        <ul class="nav">
+            <li><%= link_to "Home",posts_path %></li>
+            <li><%= link_to "Browse Posts", browse_posts_posts_path %></li>
+            <li><%= link_to "Contact Us" %></li>
+            <li class="dropdown" id="menu1">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+      Contents
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="<%=content_ror_posts_path%> ">ROR</a></li>
+      <li><a href="#">HTML5</a></li>
+      <li><a href="#">JQuery</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Find more</a></li>
+    </ul>
+  </li>
+            
+            
+          </ul>
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      </div>
+ 
+    </div>
+  </div>
+</div>
+  <div class="container">
+    <div class="row">
+    <div class ="span9"><%= yield %></div>
+    <div class="span3">
+      <h2>About Posts</h2>
+      This Blog contains details of the twitter bootstrap integration in an sample application.
+      created sample rails application in that usin twitter-bootstrap-rails gem
+    </div>
+  </div>
+  </div>
+  <a type="button" class="btn" style="width:100%;" href="#test_modal" data-toggle="modal">Add Image</a> 
+<div class="modal fade" id="test_modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>Modal Header</h3>
+  </div>
+  <div class="modal-body">
+    <p>Test Modal</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+    <a href="#" class="btn btn-primary">Save Changes</a>
+  </div>
+</div>
+
+
+</body>
+</html>
